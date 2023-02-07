@@ -3,9 +3,11 @@
   <% @recipes.each do |recipe| %>
     <li class="d-flex gap-3">
       <div>
-        <h2>
-          <%= recipe.name %>
-        </h2>
+        <%= link_to recipe_path(recipe.id), method: 'get' do %>
+          <h2>
+            <%= recipe.name %>
+          </h2>
+        <% end %>
       </div>
       <p>
         <%= recipe.description %>
