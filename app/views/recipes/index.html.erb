@@ -1,7 +1,16 @@
 <main>
   <ul>
   <% @recipes.each do |recipe| %>
-    <li><%= recipe.name %></li>
+    <li class="d-flex gap-3">
+      <div>
+        <h2>
+          <%= recipe.name %>
+        </h2>
+      </div>
+      <p>
+        <%= recipe.description %>
+      </p>        
+    </li>
   <% end %>
   </ul>
   <%= button_to 'New Recipe', new_recipe_path, method: 'get' %>
