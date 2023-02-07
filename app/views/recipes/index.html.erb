@@ -1,0 +1,9 @@
+<main>
+  <ul>
+  <% @recipes.each do |recipe| %>
+    <li><%= recipe.name %></li>
+  <% end %>
+  </ul>
+  <%= button_to 'New Recipe', new_recipe_path, method: 'get' %>
+</main>
+    
