@@ -3,10 +3,13 @@
   <% @recipes.each do |recipe| %>
     <li class="d-flex gap-3">
       <div>
-        <%= link_to recipe_path(recipe.id), method: 'get' do %>
-          <h2>
+        <h2>
+         <%= link_to recipe_path(recipe.id), method: 'get' do %>
             <%= recipe.name %>
-          </h2>
+          <% end %>
+        </h2>
+        <%= form_with(model: recipe, method: :delete, data: { confirm: 'Are you sure?' }) do |form| %>
+          <%= form.submit "Delete" %>
         <% end %>
       </div>
       <p>
