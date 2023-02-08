@@ -1,4 +1,5 @@
 <main>
+  <%= button_to 'Add ingredient', new_recipe_recipe_food_path(@recipe), method: :get %>
   <ul class='container-fluid'>
     <% @recipe_foods.each do |recipe_food| %>
       <li class='d-flex justify-content-between'>
