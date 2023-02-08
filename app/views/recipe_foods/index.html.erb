@@ -1,7 +1,7 @@
 <main>
-  <ul>
+  <ul class='container-fluid'>
     <% @recipe_foods.each do |recipe_food| %>
-      <li>
+      <li class='d-flex justify-content-between'>
         <p>
           <%= recipe_food.food.name %>
         </p>
@@ -11,6 +11,9 @@
         <p>
           <%= recipe_food.food.price * recipe_food.quantity %>
         </p>
+        <%= form_with(model: recipe_food, method: :delete) do |form| %>
+          <%= form.submit "REMOVE", class:'link-set link-primary' %>
+        <% end %>
       </li>
     <% end %>
   </ul>
