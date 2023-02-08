@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class CreateFoodTest < ActiveSupport::TestCase
+class InventoryFoodTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

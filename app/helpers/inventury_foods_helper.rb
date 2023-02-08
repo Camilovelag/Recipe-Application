@@ -1,0 +1,2 @@
+module InventuryFoodsHelper
+end
