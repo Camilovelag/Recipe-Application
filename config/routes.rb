@@ -10,4 +10,6 @@ Rails.application.routes.draw do
   resources :inventories do
     resources :inventury_foods, only: [:index]
   end
+
+  resources :foods, only: [:index]
 end

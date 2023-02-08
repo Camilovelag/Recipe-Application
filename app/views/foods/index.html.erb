@@ -1,0 +1,20 @@
+<h1>Foods</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Price</th>
+      <th>Unit</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @foods.each do |food| %>
+      <tr>
+        <td><%= food.name %></td>
+        <td><%= food.price %></td>
+        <td><%= food.unit %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
