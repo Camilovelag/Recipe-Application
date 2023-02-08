@@ -1,6 +1,5 @@
 class FoodsController < ApplicationController
   def index
-    inventory = Inventory.find(params[:inventory_id])
-    @foods = inventory.foods
+    @foods = Food.includes(:inventory).where(inventories: { user_id: current_user.id })
   end
 end

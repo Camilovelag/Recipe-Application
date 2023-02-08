@@ -1,0 +1,23 @@
+/* inventory_foods index view */
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td,
+th {
+  border: 1px solid #e0e0e0;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #e8e7e7;
+}
+
+.header {
+  background-color: #3f51b5;
+  color: white;
+}

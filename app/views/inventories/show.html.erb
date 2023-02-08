@@ -1,0 +1,19 @@
+<h1><%= @inventory.name %></h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Food Name</th>
+      <th>Quantity</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @inventory_foods.each do |inventory_food| %>
+      <tr>
+        <td><%= inventory_food.food.name %></td>
+        <td><%= inventory_food.quantity %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
