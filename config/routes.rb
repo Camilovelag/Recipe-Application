@@ -6,7 +6,9 @@ Rails.application.routes.draw do
   root "users#index"
 
   resources :users, only: [:index]
-  resources :recipes
+  resources :recipes do
+    resources :recipe_foods
+  end
 
   resources :inventories do
     resources :inventury_foods, only: [:index]
