@@ -2,7 +2,7 @@
   <ul class='container-fluid d-flex flex-column gap-4'>
   <% @recipes.each do |recipe| %>
     <li class='d-flex gap-5 px-4 py-2 border border-3 border-dark'>
-      <div class='d-flex flex-column align-items-center justify-content-between'>
+      <div class='d-flex flex-column align-items-center justify-content-between w-25'>
         <%= link_to recipe_path(recipe.id), class:'title-set text-center', method: 'get' do %>
           <h2>        
             <%= recipe.name %>
@@ -12,7 +12,7 @@
           <%= form.submit "REMOVE", class:'link-set link-primary' %>
         <% end %>
       </div>
-      <p>
+      <p class='w-75'>
         <%= recipe.description %>
       </p>        
     </li>
