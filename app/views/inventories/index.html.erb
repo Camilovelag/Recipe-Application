@@ -1,0 +1,21 @@
+<h1>Inventory</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Inventory Name</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @inventories.each do |item| %>
+      <tr>
+        <td><%= item.name %></td>
+        <td>
+          <%= link_to 'Remove', item, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
