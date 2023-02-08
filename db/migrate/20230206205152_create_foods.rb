@@ -3,7 +3,7 @@ class CreateFoods < ActiveRecord::Migration[7.0]
     create_table :foods do |t|
       t.string :name
       t.decimal :price
-      t.integer :quantity
+      t.string :unit
 
       t.timestamps
     end
