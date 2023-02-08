@@ -1,15 +1,15 @@
-<main>
-  <ul>
+<main class='container-fluid px-5'>
+  <ul class='container-fluid d-flex flex-column gap-4'>
   <% @recipes.each do |recipe| %>
-    <li class="d-flex gap-3">
-      <div>
-        <h2>
-         <%= link_to recipe_path(recipe.id), method: 'get' do %>
+    <li class='d-flex gap-5 px-4 py-2 border border-3 border-dark'>
+      <div class='d-flex flex-column align-items-center justify-content-between'>
+        <%= link_to recipe_path(recipe.id), class:'title-set text-center', method: 'get' do %>
+          <h2>        
             <%= recipe.name %>
-          <% end %>
-        </h2>
-        <%= form_with(model: recipe, method: :delete, data: { confirm: 'Are you sure?' }) do |form| %>
-          <%= form.submit "Delete" %>
+          </h2>
+        <% end %>
+        <%= form_with(model: recipe, method: :delete) do |form| %>
+          <%= form.submit "REMOVE", class:'link-set link-primary' %>
         <% end %>
       </div>
       <p>
@@ -18,6 +18,6 @@
     </li>
   <% end %>
   </ul>
-  <%= button_to 'New Recipe', new_recipe_path, method: 'get' %>
+  <%= button_to 'New Recipe', new_recipe_path, class:'btn-1', method: 'get' %>
 </main>
     
