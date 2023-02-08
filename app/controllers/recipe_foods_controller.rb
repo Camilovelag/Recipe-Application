@@ -7,6 +7,6 @@ class RecipeFoodsController < ApplicationController
     @recipe_food = RecipeFood.find(params[:id])
     @recipe_food.destroy
     @recipe_food.save
-    redirect_to recipe_foods_path
+    redirect_to recipe_recipe_foods_path(params[:recipe_id])
   end
 end

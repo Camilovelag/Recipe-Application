@@ -11,9 +11,7 @@
         <p>
           <%= recipe_food.food.price * recipe_food.quantity %>
         </p>
-        <%= form_with(model: recipe_food, method: :delete) do |form| %>
-          <%= form.submit "REMOVE", class:'link-set link-primary' %>
-        <% end %>
+        <%= button_to 'Remove', recipe_recipe_food_path(recipe_id: params[:recipe_id], id: recipe_food.id), method: :delete %>
       </li>
     <% end %>
   </ul>
