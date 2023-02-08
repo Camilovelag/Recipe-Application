@@ -16,3 +16,7 @@
   background: #fff;
   box-shadow: 4px 4px 1px;
 }
+
+.w-fit-content {
+  width: fit-content;
+}
