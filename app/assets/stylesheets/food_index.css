@@ -1,0 +1,24 @@
+.foods-container {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+table {
+  width: 100%;
+  margin-top: 50px;
+}
+
+th,
+td {
+  padding: 10px;
+  text-align: left;
+}
+
+th {
+  background-color: #ddd;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
