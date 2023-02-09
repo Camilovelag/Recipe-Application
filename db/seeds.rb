@@ -33,9 +33,9 @@ recipe3 = Recipe.create!(name: "Salad Recipe", description: "1. Wash and chop gr
 3. Serve and enjoy your healthy salad!", preparation_time: '40mnt', cooking_time: '0', public: true, user_id: user.id)
 
 
-inventory1 = Inventory.create!(name: "My Fridge", user_id: user.id)
-inventory2 = Inventory.create!(name: "Pantry", user_id: user.id)
-inventory3 = Inventory.create!(name: "Food Storage", user_id: user.id)
+inventory1 = Inventory.create!(name: "My Fridge", description: "this is a description added to be displayed in the cards", user_id: user.id)
+inventory2 = Inventory.create!(name: "Pantry", description: "this is a description added to be displayed in the cards", user_id: user.id)
+inventory3 = Inventory.create!(name: "Food Storage",description: "this is a description added to be displayed in the cards", user_id: user.id)
 
 
 InventoryFood.create!(quantity: 5, food_id: 1, inventory_id: inventory1.id)

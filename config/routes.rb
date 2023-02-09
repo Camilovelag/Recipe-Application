@@ -9,11 +9,13 @@ Rails.application.routes.draw do
   resources :users, only: [:index]
   resources :shopping_lists, only: [:index]
 
+  resources :inventories, only: [:index, :show, :destroy] do
+    resources :inventory_foods, only: [:index, :create, :destroy]
   resources :recipes do
     resources :recipe_foods
   end
   
-  resources :inventories do
-    resources :inventury_foods, only: [:index]
+  # resources :inventories do
+  #   resources :inventury_foods, only: [:index]
   end
 end
