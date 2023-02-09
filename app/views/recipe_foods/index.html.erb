@@ -12,6 +12,7 @@
         <p>
           <%= recipe_food.food.price * recipe_food.quantity %>
         </p>
+        <%= button_to 'Modify', edit_recipe_recipe_food_path(recipe_id: params[:recipe_id], id: recipe_food.id), method: :get %>
         <%= button_to 'Remove', recipe_recipe_food_path(recipe_id: params[:recipe_id], id: recipe_food.id), method: :delete %>
       </li>
     <% end %>
