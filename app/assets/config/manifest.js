@@ -3,3 +3,4 @@
 //= link recipe.css
 //= link inventury_details_foods_index.css
 //= link food_index.css
+//= link NewFood.css
