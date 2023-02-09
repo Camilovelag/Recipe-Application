@@ -1,11 +1,12 @@
 <h1>Foods</h1>
-
+<%= link_to "Add New Food", new_food_path, class: "btn btn-primary" %>
 <table>
   <thead>
     <tr>
       <th>Name</th>
       <th>Price</th>
       <th>Unit</th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
@@ -14,6 +15,11 @@
         <td><%= food.name %></td>
         <td><%= food.price %></td>
         <td><%= food.unit %></td>
+        <td>
+          <%= form_with(model: food, method: :delete, data: { confirm: 'Are you sure?' }) do |form| %>
+            <%= form.submit "Destroy" %>
+          <% end %>
+        </td>
       </tr>
     <% end %>
   </tbody>

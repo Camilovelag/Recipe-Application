@@ -1,0 +1,30 @@
+<main class='container-fluid px-5 d-flex flex-column align-items-center gap-3'>
+  <h1>New Recipe</h1>
+  <%= form_with class: 'd-flex flex-column gap-2',  model: @recipe, local: true do |f| %>
+    <div class='d-flex gap-2 justify-content-between'>
+      <%= f.label :name %>
+      <%= f.text_field :name, class:'border border-dark border-3' %>
+    </div>
+    <div class='d-flex gap-2'>
+      <%= f.label :public %>
+      <div class='form-check form-switch'>
+        <%= f.check_box :public, class: 'form-check-input' %>
+      </div>
+    </div>
+    <div class='d-flex gap-2 justify-content-between'>
+      <%= f.label :preparation_time %>
+      <%= f.text_field :preparation_time, class:'border border-dark border-3' %>
+    </div>
+    <div class='d-flex gap-2 justify-content-between'>
+      <%= f.label :cooking_time %>
+      <%= f.text_field :cooking_time, class:'border border-dark border-3' %>
+    </div>
+    <div class='d-flex gap-2 justify-content-between'>
+    <%= f.label :description %>
+    <%= f.text_area :description, cols: 30, rows: 5, class:'border border-dark border-3' %>
+    </div>
+    <div class='d-flex justify-content-center'>
+      <%= f.submit 'Post', class: 'btn-1 w-fit-content' %>
+    </div>
+  <% end %>
+</main>

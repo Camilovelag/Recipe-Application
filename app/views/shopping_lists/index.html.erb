@@ -1,0 +1,51 @@
+<h1>Shopping List</h1>
+<div class="col">
+  <div class="row">
+    <h2>
+      Amount of food to buy
+    </h2>
+    <h2>
+      <%= @needed_foods.length %>
+    </h2>
+  </div>
+  <div class="row">
+    <h1>Total food price: </h1>
+    <h1>
+      <%= @needed_foods.sum(&:price) %>
+    </h1>
+  </div>
+</div>
+
+<div class="col">
+  <div class="row">
+    <h2>
+      Recipe: 
+    </h2>
+    <h2>
+      <%= @recipe.name %>
+    </h2>
+  </div>
+  <div class="row">
+    <h1>Inventory: </h1>
+    <h1>
+      <%= @inventory.name %>
+    </h1>
+  </div>
+</div>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Price</th>
+      <th>Unit</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @needed_foods.each do |food| %>
+      <tr>
+        <td><%= food.name %></td>
+        <td><%= food.price %></td>
+        <td><%= food.unit %></td>
+    <% end %>
+  </tbody>
+</table>
