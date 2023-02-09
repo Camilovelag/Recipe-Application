@@ -8,13 +8,10 @@ class ShoppingListsController < ApplicationController
 
     @needed_foods = []
     @recipe_foods.each do |recipe_food|
-      if !@inventory_foods.find_by(food_id: recipe_food.food_id)
-        @needed_foods << recipe_food.food
-      end
+      @needed_foods << recipe_food.food unless @inventory_foods.find_by(food_id: recipe_food.food_id)
     end
   end
 
-  
   private
 
   def shopping_list_params
