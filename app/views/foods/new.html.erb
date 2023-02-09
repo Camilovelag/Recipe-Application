@@ -1,0 +1,12 @@
+<%= form_with model: @food, local: true do |form| %>
+  <%= form.label :name %>
+  <%= form.text_field :name %>
+
+  <%= form.label :price %>
+  <%= form.text_field :price %>
+
+  <%= form.label :unit %>
+  <%= form.text_field :unit %>
+
+  <%= form.submit %>
+<% end %>
