@@ -3,7 +3,6 @@ class FoodsController < ApplicationController
     @foods = Food.all
   end
 
-  
   def new
     @food = Food.new
   end
