@@ -8,9 +8,7 @@
             <%= recipe.name %>
           </h2>
         <% end %>
-        <%= form_with(model: recipe, method: :delete) do |form| %>
-          <%= form.submit "REMOVE", class:'link-set link-primary' %>
-        <% end %>
+        <%= button_to 'REMOVE', recipe_path(recipe), method: :delete, class:'link-set link-primary' %>
       </div>
       <p class='w-75'>
         <%= recipe.description %>
