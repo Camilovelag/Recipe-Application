@@ -1,19 +1,57 @@
-<h1>Foods in Inventory</h1>
-
-<table>
+<h1><%= @inventory.name %> </h1>
+<table class="table">
   <thead>
     <tr>
-      <th>Food Name</th>
+      <th>Food</th>
       <th>Quantity</th>
+      <th>Action</th>
     </tr>
   </thead>
-
   <tbody>
     <% @inventory_foods.each do |inventory_food| %>
       <tr>
         <td><%= inventory_food.food.name %></td>
         <td><%= inventory_food.quantity %></td>
+        <td>
+          <%= form_with(model: inventory_food, url: inventory_inventory_food_path(inventory_food.inventory, inventory_food), method: :delete, local: true) do |form| %>
+          <%= form.submit "Remove Food", class: "btn btn-danger" %>
+          <% end %>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
+
+<!-- The modal responsible for adding new food -->
+<div class="modal fade" id="addFoodModal" tabindex="-1" role="dialog" aria-labelledby="addFoodModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="addFoodModalLabel">Add Food</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <%= form_with(model: [@inventory, @inventory.inventory_foods.build], url: inventory_inventory_foods_path(@inventory), local: true) do |form| %>
+          <div class="form-group">
+            <%= form.label :food_id, "Food" %>
+            <%= form.collection_select :food_id, Food.all, :id, :name, {}, class: "form-control" %>
+          </div>
+          <div class="form-group">
+            <%= form.label :quantity, "Quantity" %>
+            <%= form.number_field :quantity, class: "form-control" %>
+          </div>
+      </div>
+      <div class="modal-footer">
+        <%= form.submit "Add Food", class: "btn btn-primary" %>
+        <% end %>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addFoodModal">
+  Add Food
+</button>
