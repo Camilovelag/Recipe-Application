@@ -8,7 +8,7 @@
     <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track": "reload" %>
     
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-    <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
+    <%# <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: false %>
     <%= stylesheet_link_tag "inventury_details_foods_index.css", media: "all", "data-turbolinks-track": "reload" %>
     <%= stylesheet_link_tag "recipe", "data-turbo-track": "reload" %>
     <%= stylesheet_link_tag "food_index.css", media: "all", "data-turbolinks-track": "reload" %>
@@ -27,6 +27,9 @@
         <ul class="navbar-nav">
           <li class="nav-item">
             <a class="nav-link" href="/foods">Foods</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/inventories">Inventories</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="/recipes">My Recipes</a>
