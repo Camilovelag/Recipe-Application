@@ -1,5 +1,10 @@
-<h1><%= @inventory.name %> </h1>
-<table class="table">
+<h1 style="text-align: center;"><%= @inventory.name %> </h1>
+<div class="d-flex justify-content-end my-3">
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addFoodModal" style="margin-right: 10%">
+    Add Food
+  </button>
+</div>
+<table class="table mx-auto" style="width: 80%;">
   <thead>
     <tr>
       <th>Food</th>
@@ -52,6 +57,3 @@
   </div>
 </div>
 
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addFoodModal">
-  Add Food
-</button>
