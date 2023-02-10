@@ -5,8 +5,7 @@ class Ability
 
   def initialize(user)
     return unless user.present?
-    can :create, RecipeFood, user: user
-    can :destroy, RecipeFood, user: user
-    can :update, RecipeFood, user: user
+    can :manage, RecipeFood, user: user
+    can :manage, Recipe, user: user
   end
 end

@@ -29,7 +29,7 @@
 <section class='container-fluid px-5'>
   <div class='d-flex justify-content-between'>  
     <button class='btn-1'>Button Generate shopping list goes here</button>
-    <% if can? :create, :recipe_food %>
+    <% if can? :create, @recipe %>
       <%= button_to 'Add ingredient', new_recipe_recipe_food_path(@recipe), method: :get, class:'btn-1' %>
     <% end %>
   </div>
@@ -41,7 +41,7 @@
         <th>Food</th>
         <th>Quantity</th>
         <th>Value</th>
-        <% if can? :update, :recipe_food %>
+        <% if can? :update, @recipe %>
           <th class='w-25'>Actions</th>
         <% end %>
       </tr>
@@ -58,7 +58,7 @@
           <td>
             &dollar; <%= recipe_food.food.price * recipe_food.quantity %>
           </td>
-          <% if can? :update, :recipe_food %>
+          <% if can? :update, @recipe %>
             <td class='d-flex gap-2'>
               <%= button_to 'Modify', edit_recipe_recipe_food_path(recipe_id: params[:id], id: recipe_food.id), method: :get, class:'link-set text-primary' %>
               <%= button_to 'Remove', recipe_recipe_food_path(recipe_id: params[:id], id: recipe_food.id), method: :delete, class:'link-set text-primary' %>
