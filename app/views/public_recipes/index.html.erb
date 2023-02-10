@@ -1,0 +1,27 @@
+<main class='container-fluid px-5'>
+  <ul class='container-fluid d-flex flex-column gap-4'>
+  <% @recipes.each do |recipe| %>
+    <li class='d-flex gap-5 px-4 py-2 border border-3 border-dark'>
+      <div class='d-flex flex-column align-items-start w-50'>
+        <h2 class='align-start'>        
+          <%= link_to recipe_path(recipe.id), class:'title-set text-center', method: 'get' do %>
+            <%= recipe.name %>
+          <% end %>
+        </h2>
+        <h3>
+          By: <%= recipe.user.name %>
+        </h3>
+      </div>
+      <div class='w-75'>
+        <p>
+          Total food items: <%= food_items(recipe) %>
+        </p>
+        <p>
+        Total price: &dollar;<%= foods_price(recipe) %>
+        </p>
+      </div>        
+    </li>
+  <% end %>
+  </ul>
+  <%= button_to 'New Recipe', new_recipe_path, class:'btn-1', method: 'get' %>
+</main>

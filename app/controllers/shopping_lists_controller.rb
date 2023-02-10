@@ -1,5 +1,5 @@
 class ShoppingListsController < ApplicationController
-    def index
+  def index
     @recipe = Recipe.find(params[:recipe_id])
     @inventory = Inventory.find(params[:inventory_id])
 
@@ -10,8 +10,8 @@ class ShoppingListsController < ApplicationController
 
     @needed_foods = []
     @recipe_foods.each do |recipe_food|
-      if !@inventory_foods.find_by(food_id: recipe_food.food_id)
-        @needed_foods << {food: recipe_food.food, quantity: recipe_food.quantity}
+      unless @inventory_foods.find_by(food_id: recipe_food.food_id)
+        @needed_foods << { food: recipe_food.food, quantity: recipe_food.quantity }
       end
     end
     @total_price = @needed_foods.sum(0.0) { |item| item[:quantity] * item[:food].price }

@@ -29,7 +29,9 @@
 <section class='container-fluid px-5'>
   <div class='d-flex justify-content-between'>  
     <%= link_to 'Show Inventory Modal', '#inventory-modal', data: { toggle: 'modal' } %>
-    <%= button_to 'Add ingredient', new_recipe_recipe_food_path(@recipe), method: :get, class:'btn-1' %>
+    <% if can? :create, @recipe %>
+      <%= button_to 'Add ingredient', new_recipe_recipe_food_path(@recipe), method: :get, class:'btn-1' %>
+    <% end %>
   </div>
   <div class='border border-3 border-dark w-100 mt-4'>
   </div>
@@ -39,7 +41,9 @@
         <th>Food</th>
         <th>Quantity</th>
         <th>Value</th>
-        <th class='w-25'>Actions</th>
+        <% if can? :update, @recipe %>
+          <th class='w-25'>Actions</th>
+        <% end %>
       </tr>
     </tbody>
     <tbody>
@@ -54,10 +58,12 @@
           <td>
             &dollar; <%= recipe_food.food.price * recipe_food.quantity %>
           </td>
-          <td class='d-flex gap-2'>
-            <%= button_to 'Modify', edit_recipe_recipe_food_path(recipe_id: params[:id], id: recipe_food.id), method: :get, class:'link-set text-primary' %>
-            <%= button_to 'Remove', recipe_recipe_food_path(recipe_id: params[:id], id: recipe_food.id), method: :delete, class:'link-set text-primary' %>
-          </td>
+          <% if can? :update, @recipe %>
+            <td class='d-flex gap-2'>
+              <%= button_to 'Modify', edit_recipe_recipe_food_path(recipe_id: params[:id], id: recipe_food.id), method: :get, class:'link-set text-primary' %>
+              <%= button_to 'Remove', recipe_recipe_food_path(recipe_id: params[:id], id: recipe_food.id), method: :delete, class:'link-set text-primary' %>
+            </td>
+          <% end %>
         </tr>
       <% end %>
     </tbody>
