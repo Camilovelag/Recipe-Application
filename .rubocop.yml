@@ -7,6 +7,7 @@ AllCops:
     - "Guardfile"
     - "Rakefile"
     - "node_modules/**/*"
+    - "app/models/ability.rb"
 
   DisplayCopNames: true
 

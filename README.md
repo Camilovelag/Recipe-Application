@@ -87,20 +87,35 @@ Clone this repository to your desired folder:
 
 Install this project with:
 
+  Run the following commands, to be able to use Bootstap and JavsScript. If overwrites, type _y_
+
 ```
-  bundle install
-  rails db:migrate
-```
-run the following commands, to be able to use Bootstap and JavsScript
   rails javascript:install:esbuild
   rails css:install:bootstrap
+```
+
+  Then run:
+
+```
+  bundle install
+  rails db:create
+  rails db:migrate
+```
+
 ### Usage
 
 To run the project, execute the following command:
 
 ```
-  pg_ctl start
   rails server
+```
+
+### Run tests
+
+To run all tests, including unit and integration tests, run the following command:
+
+```
+  rspec
 ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
