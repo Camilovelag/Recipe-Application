@@ -5,13 +5,13 @@
       Amount of food to buy
     </h2>
     <h2>
-      <%= @needed_foods.length %>
+      <%= @shopping_list.length %>
     </h2>
   </div>
   <div class="row">
     <h1>Total food price: </h1>
     <h1>
-      <%= @needed_foods.sum(&:price) %>
+      <%= @shopping_list.sum(&:price) %>
     </h1>
   </div>
 </div>
@@ -32,20 +32,23 @@
     </h1>
   </div>
 </div>
+<% if @shopping_list.any? %>
 <table>
-  <thead>
+  <tr>
+    <th>Food Name</th>
+    <th>Unit</th>
+    <th>Price</th>
+  </tr>
+  <% @shopping_list.each do |item| %>
     <tr>
-      <th>Name</th>
-      <th>Price</th>
-      <th>Unit</th>
+      <td><%= item.food.name %></td>
+      <td><%= item.food.unit %></td>
+      <td><%= item.food.price %></td>
     </tr>
-  </thead>
-  <tbody>
-    <% @needed_foods.each do |food| %>
-      <tr>
-        <td><%= food.name %></td>
-        <td><%= food.price %></td>
-        <td><%= food.unit %></td>
-    <% end %>
-  </tbody>
+  <% end %>
+</table>
+
+<% else %>
+  <h1>All ingredients in stock!</h1>
+<% end %>
 </table>

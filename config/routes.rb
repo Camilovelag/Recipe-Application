@@ -13,5 +13,6 @@ Rails.application.routes.draw do
 
   resources :foods, only: [:index, :new, :destroy, :create]
 
-  resources :shopping_lists, only: [:index]
+  get 'recipes/:recipe_id/inventories/:inventory_id/shopping_list', to: 'shopping_lists#show', as: 'shopping_list'
+
 end
