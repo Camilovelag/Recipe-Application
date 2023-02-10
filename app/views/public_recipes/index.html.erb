@@ -3,11 +3,11 @@
   <% @recipes.each do |recipe| %>
     <li class='d-flex gap-5 px-4 py-2 border border-3 border-dark'>
       <div class='d-flex flex-column align-items-start w-50'>
-        <%= link_to recipe_path(recipe.id), class:'title-set text-center', method: 'get' do %>
-          <h2>        
+        <h2 class='align-start'>        
+          <%= link_to recipe_path(recipe.id), class:'title-set text-center', method: 'get' do %>
             <%= recipe.name %>
-          </h2>
-        <% end %>
+          <% end %>
+        </h2>
         <h3>
           By: <%= recipe.user.name %>
         </h3>
@@ -18,7 +18,8 @@
         </p>
         <p>
         Total price: &dollar;<%= foods_price(recipe) %>
-      </p>         
+        </p>
+      </div>        
     </li>
   <% end %>
   </ul>
