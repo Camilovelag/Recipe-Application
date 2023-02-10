@@ -18,10 +18,6 @@ Rails.application.routes.draw do
     end
   end
   post '/shopping_lists', to: 'shopping_lists#index'
-  # resources :inventories do
-  #   resources :inventury_foods, only: [:index]
-
   resources :foods, only: [:index, :new, :destroy, :create]
   resources :shopping_lists, only: [:index]
-
 end
