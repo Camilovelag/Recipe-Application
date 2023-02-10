@@ -1,0 +1,21 @@
+<h1 style="text-align: center;">Inventory</h1>
+<div class="inventory-cards d-flex flex-wrap">
+  <% @inventories.each do |item| %>
+    <div class="card mx-auto my-3" style="width: 80%;">
+      <div class="card-header">
+        <h3><%= item.name %></h3>
+      </div>
+      <div class="card-body">
+        <p><%= item.description %></p>
+        <%= form_with(model: item, method: :delete, data: { confirm: 'Are you sure?' }) do |form| %>
+          <%= form.submit "Remove", class: "btn btn-danger" %>
+        <% end %>
+      </div>
+      <%= link_to inventory_path(item) do %>
+        <div class="card-body">
+          <h4>View</h4>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+</div>

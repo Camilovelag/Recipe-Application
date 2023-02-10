@@ -1,0 +1,65 @@
+<main class='container-fluid px-5'>
+  <div>
+    <h1 class='text-center'>
+      <%= @recipe.name %>
+    </h1>
+    <div class= 'd-flex gap-3 justify-content-between'>
+      <div>
+        <p>
+          Preparation time:
+          <%= @recipe.preparation_time %>
+        </p>
+        <p>
+          Cooking time:  
+          <%= @recipe.cooking_time %>
+        </p>
+      </div>
+      <div class='d-flex gap-2'>
+        <p class="form-check-label">Public</p>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" <%= @recipe.public ? 'checked' : '' %> disabled >
+        </div>
+      </div>
+    </div>
+    <p>
+      <%= @recipe.description %>
+    </p>
+  </div>
+</main>
+<section class='container-fluid px-5'>
+  <div class='d-flex justify-content-between'>  
+    <button class='btn-1'>Button Generate shopping list goes here</button>
+    <%= button_to 'Add ingredient', new_recipe_recipe_food_path(@recipe), method: :get, class:'btn-1' %>
+  </div>
+  <div class='border border-3 border-dark w-100 mt-4'>
+  </div>
+  <table class='border border-3 border-dark table table-hover'>
+    <thead class='bg-secondary'>
+      <tr>
+        <th>Food</th>
+        <th>Quantity</th>
+        <th>Value</th>
+        <th class='w-25'>Actions</th>
+      </tr>
+    </tbody>
+    <tbody>
+      <% @recipe_foods.each do |recipe_food| %>
+        <tr class='align-middle'>
+          <td>
+            <%= recipe_food.food.name %>
+          </td>
+          <td>
+            <%= recipe_food.quantity %> <%= recipe_food.food.unit %>
+          </td>
+          <td>
+            &dollar; <%= recipe_food.food.price * recipe_food.quantity %>
+          </td>
+          <td class='d-flex gap-2'>
+            <%= button_to 'Modify', edit_recipe_recipe_food_path(recipe_id: params[:id], id: recipe_food.id), method: :get, class:'link-set text-primary' %>
+            <%= button_to 'Remove', recipe_recipe_food_path(recipe_id: params[:id], id: recipe_food.id), method: :delete, class:'link-set text-primary' %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</section>

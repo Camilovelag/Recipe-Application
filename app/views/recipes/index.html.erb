@@ -1,0 +1,21 @@
+<main class='container-fluid px-5'>
+  <ul class='container-fluid d-flex flex-column gap-4'>
+  <% @recipes.each do |recipe| %>
+    <li class='d-flex gap-5 px-4 py-2 border border-3 border-dark'>
+      <div class='d-flex flex-column align-items-center justify-content-between w-25'>
+        <h2 class='text-center'>        
+          <%= link_to recipe_path(recipe.id), class:'title-set text-center', method: 'get' do %>
+            <%= recipe.name %>
+          <% end %>
+        </h2>
+        <%= button_to 'REMOVE', recipe_path(recipe), method: :delete, class:'link-set link-primary' %>
+      </div>
+      <p class='w-75'>
+        <%= recipe.description %>
+      </p>        
+    </li>
+  <% end %>
+  </ul>
+  <%= button_to 'New Recipe', new_recipe_path, class:'btn-1', method: 'get' %>
+</main>
+    
