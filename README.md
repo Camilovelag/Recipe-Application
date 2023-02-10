@@ -25,7 +25,7 @@
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 [Recipe_Application] <a name="about-project"></a>
+# 📖 Recipe Application <a name="about-project"></a>
 
 > Describe your project in 1 or 2 sentences.
 
