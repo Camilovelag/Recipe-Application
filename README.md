@@ -29,7 +29,7 @@
 
 > Describe your project in 1 or 2 sentences.
 
-**[BlogApp]** This project, created using Ruby on Rails, provides a platform for users to discover and save their favorite recipes. With an intuitive interface and a user-friendly design, users can easily browse through a wide range of recipes, view detailed instructions, and save the ones they like for future reference.
+**[Recipe Application]** This project, created using Ruby on Rails, provides a platform for users to discover and save their favorite recipes. With an intuitive interface and a user-friendly design, users can easily browse through a wide range of recipes, view detailed instructions, and save the ones they like for future reference.
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -62,11 +62,6 @@ Built with Ruby on Rails
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- LIVE DEMO -->
-
-## 🚀 Live Demo <a name="live-demo"></a>
-
-
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- GETTING STARTED -->
@@ -91,7 +86,9 @@ Install this project with:
   bundle install
   rails db:migrate
 ```
-
+run the following commands, to be able to use Bootstap and JavsScript
+  rails javascript:install:esbuild
+  rails css:install:bootstrap
 ### Usage
 
 To run the project, execute the following command:
@@ -138,7 +135,7 @@ To run the project, execute the following command:
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](../../issues/).
+Feel free to check the [issues page](https://github.com/Mhamad-Raad/ruby-on-rails-capstone/issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
