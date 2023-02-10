@@ -49,7 +49,7 @@
           </div>
       </div>
       <div class="modal-footer">
-        <%= form.submit "Add Food", class: "btn btn-primary" %>
+        <%= form.submit "Add Food", class: "btn btn-primary", data: {disable_with: "Adding..."} %>
         <% end %>
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
       </div>

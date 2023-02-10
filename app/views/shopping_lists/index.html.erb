@@ -1,0 +1,46 @@
+<main>
+<div class="container">
+  <div class="col">
+    <div class="row">
+      <h2>Amount of food to buy</h2>
+      <h2><%= @needed_foods.count() %></h2>
+    </div>
+    <div class="row">
+      <h2>Recipe:</h2>
+      <h2><%= @recipe.name %></h2>
+    </div>
+  </div>
+  <div class="col">
+    <div class="row">
+      <h1>Total food price: </h1>
+      <h1><%= @total_price %></h1>
+    </div>
+    <div class="row">
+      <h1>Inventory: </h1>
+      <h1><%= @inventory.name %></h1>
+    </div>
+  </div>
+</div>
+<% if @needed_foods.any? %>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Food Name</th>
+        <th>Unit</th>
+        <th>Price</th>
+        <th>Quantity</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @needed_foods.each do |items| %>
+        <tr>
+          <td><%= items[:food].name %></td>
+          <td><%= items[:food].unit %></td>
+          <td><%= items[:food].price %></td>
+          <td><%= items[:quantity] %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>
+</main>

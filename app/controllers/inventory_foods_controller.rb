@@ -4,7 +4,7 @@ class InventoryFoodsController < ApplicationController
     @inventory_food = @inventory.inventory_foods.new(inventory_food_params)
     return unless @inventory_food.save
 
-    redirect_to inventory_path(@inventory)
+    redirect_to inventory_path(@inventory_food.inventory)
   end
 
   def destroy
