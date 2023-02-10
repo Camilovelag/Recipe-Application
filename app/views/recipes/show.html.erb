@@ -84,7 +84,6 @@
             <%= label_tag :inventory, 'Select Inventory' %>
             <%= select_tag :inventory_id, options_from_collection_for_select(@inventories, :id, :name), class: 'form-control' %>
           </div>
-          <%= label_tag :recipe_id, params[:id] %>
           <%= hidden_field_tag :recipe_id, params[:id] %>
           <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

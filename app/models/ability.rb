@@ -6,7 +6,7 @@ class Ability
 
     return unless user.present?
 
-    can(:manage, RecipeFood, user:)
-    can :manage, Recipe, user:
+    can :manage, RecipeFood, user: user
+    can :manage, Recipe, user: user
   end
 end
