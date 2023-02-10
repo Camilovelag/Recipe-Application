@@ -76,7 +76,12 @@ In order to run this project you need: ``` Ruby ```, ``` Rails ``` and a Databas
 
 ### Setup
 
-Clone this repository to your desired folder.
+Clone this repository to your desired folder:
+
+```
+  git clone git@github.com:Mhamad-Raad/ruby-on-rails-capstone.git
+  cd ruby-on-rails-capstone
+```
 
 ### Install
 
