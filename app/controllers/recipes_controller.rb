@@ -6,6 +6,7 @@ class RecipesController < ApplicationController
   def show
     @recipe = Recipe.find(params[:id])
     @recipe_foods = RecipeFood.where(recipe_id: params[:id])
+    @inventories = Inventory.where(user_id: current_user.id)
   end
 
   def new

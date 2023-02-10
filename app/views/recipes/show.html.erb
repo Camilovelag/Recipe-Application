@@ -28,7 +28,7 @@
 </main>
 <section class='container-fluid px-5'>
   <div class='d-flex justify-content-between'>  
-    <button class='btn-1'>Button Generate shopping list goes here</button>
+    <%= link_to 'Show Inventory Modal', '#inventory-modal', data: { toggle: 'modal' } %>
     <%= button_to 'Add ingredient', new_recipe_recipe_food_path(@recipe), method: :get, class:'btn-1' %>
   </div>
   <div class='border border-3 border-dark w-100 mt-4'>
@@ -63,3 +63,31 @@
     </tbody>
   </table>
 </section>
+<div class="modal fade" id="inventory-modal" tabindex="-1" role="dialog" aria-labelledby="inventoryModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="inventoryModalLabel">Inventories</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <%= form_tag shopping_lists_path, method: :post do %>
+          <div class="form-group">
+            <%= label_tag :inventory, 'Select Inventory' %>
+            <%= select_tag :inventory_id, options_from_collection_for_select(@inventories, :id, :name), class: 'form-control' %>
+          </div>
+          <%= label_tag :recipe_id, params[:id] %>
+          <%= hidden_field_tag :recipe_id, params[:id] %>
+          <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <input type="submit" value="Submit" class="btn btn-primary"/>
+        </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
+

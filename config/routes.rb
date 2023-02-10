@@ -13,13 +13,13 @@ Rails.application.routes.draw do
   resources :recipes do
     resources :recipe_foods
     resources :inventories, only: [:index, :show, :destroy] do
-    resources :shopping_lists, only: [:index]
     end
   end
+  post '/shopping_lists', to: 'shopping_lists#index'
   # resources :inventories do
   #   resources :inventury_foods, only: [:index]
 
   resources :foods, only: [:index, :new, :destroy, :create]
-
   resources :shopping_lists, only: [:index]
+
 end
