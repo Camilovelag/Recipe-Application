@@ -5,7 +5,6 @@ RSpec.describe 'Recipe', type: :feature do
     before(:each) do
       User.destroy_all
       @user = User.create!(name: 'hann', email: 'hannania002@gmail.com', password: '123456')
-      @user.confirm
       @food = Food.create!(name: 'Pizza', price: 5, unit: 'grams')
       @recipe = Recipe.create!(
         user_id: @user.id, name: 'Pizza Recipe', description: 'Pizza Recipe Description',

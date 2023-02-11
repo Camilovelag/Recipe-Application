@@ -5,7 +5,6 @@ RSpec.describe 'Foods', type: :feature do
     before(:each) do
       User.destroy_all
       @user = User.create!(name: 'hann', email: 'hannania002@gmail.com', password: '123456')
-      @user.confirm
       Food.create!(name: 'Pizza', price: 5, unit: 'grams')
 
       visit users_path
